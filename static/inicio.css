@@ -1,0 +1,125 @@
+html{
+    font-family:monospace;
+}
+
+h1 {
+    font-size:70px;
+    background-color: cadetblue;
+    text-align: center;
+    color: #ffffff;
+}
+
+.titulo{
+    background-color: cadetblue;
+    width:800px;
+    height: 30px;
+    margin: auto;
+}
+
+label{
+    font-size:25px;
+}
+
+
+body {
+    background-color:#ff9f1c ;
+}
+
+.registro {
+    display: block;
+    margin:auto;
+    margin-top:9%;
+    background-color: #ef476f;
+    height: 475px;
+    width: 400px;
+    text-align:center;
+    border-radius: 20px;
+}
+
+.nameInsert{
+    margin-left: 15px;
+    padding-top: 30px;
+    text-align:left ;
+}
+
+.passInsert{
+    margin-left: 15px;
+    padding-top: 30px;
+    text-align:left ;
+}
+
+
+input{
+    font-size: 20px;
+    width: 220px;
+    height: 25px;
+}
+
+/*el boton de ingresar y sus acciones*/
+
+.botonIngresar{
+    margin-top: 10%;
+    color: #ffffff;
+    background-color: #023047;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    border-width: 1px;
+}
+
+.botonIngresar:hover{
+    background-color: #03045e;
+}
+
+.botonIngresar:active{
+    background-color: #023047;
+}
+
+
+/*el boton de registrar y sus acciones*/
+
+.botonRegistrar{
+    margin-top: 10%;
+    color: #ffffff;
+    background-color: #023047;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border-width: 1px;
+    
+}
+
+.botonRegistrar:hover{
+    background-color: #03045e;
+}
+
+.botonRegistrar:active{
+    background-color: #023047;
+}
+
+/*el boton que explica las reglas*/
+
+.Reglas{
+    margin-top: 10%;
+    margin-left: 2%;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: #d90429;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.Reglas:hover{
+    background-color: #ef233c;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.Reglas:active{
+    color: #ffffff;
+    background-color: #d90429;
+    border-radius: 10px;
+    border-width: 1px;
+}
