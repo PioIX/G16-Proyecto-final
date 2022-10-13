@@ -4,22 +4,23 @@
     
   <div class="titulo"><h1>5 en linea flip</h1></div>
 <div class="registro">
-    <form action="">
+    <form action="{{url_for('ingreso')}}" method="POST">
         
   <div class="nameInsert"><label>Nombre de usuario:</label></div><br>
-    <input type="text">
+    <input required type="text" id="nombre" name="nombre">
 <br>
 <br>
 
   <div class="passInsert"><label>Contraseña:</label></div><br>
-    <input type="password">
+    <input required type="password" id="contra" name="contra">
     <br>
     <br>
     <button class="botonIngresar" type="submit">Ingresar</button><br>
     <br>
+    </form>  
     <button class="botonRegistrar" type="submit">Registrar</button>
     
-    </form>
+    
 </div>
 
     <button class="Reglas" type="button">¿Como son las reglas?</button>

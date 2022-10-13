@@ -1,0 +1,60 @@
+html {
+    font-family:monospace;
+    background-color: #ffbe0b;
+}
+
+h1 {
+    text-align: center;
+    padding: 1%;
+    font-size: 50px;
+}
+
+.tablaRegistro{
+    border-radius: 25px;
+    font-size: 25px;
+    margin: auto;
+    width: 450px;
+    height: 500px;
+    background-color: blueviolet;
+    text-align: left;
+}
+
+.User{
+    padding-top: 10%;
+    padding-bottom: 3%;
+}
+
+.Contra{
+    padding-top:1%;
+    padding-bottom:2%;
+}
+
+label{
+    margin-left: 5%;
+}
+
+.confirmarRegistro{
+    border-radius: 15px;
+    border: 0px;
+    background-color: crimson;
+    color: #a8dadc;
+    margin-top: 10%;
+    margin-left: 22%;
+    font-size: 25px;
+    width: 250px;
+    height:40px
+}
+
+.confirmarRegistro:hover{
+    background-color: #6a040f;
+}
+
+.confirmarRegistro:active{
+    background-color: crimson;
+}
+
+.insert {
+    margin-left:29% ;
+    border-radius: 5px;
+    border: 0px;    
+}

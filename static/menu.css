@@ -1,0 +1,35 @@
+html{
+    background-color: #90e0ef;
+    font-family: monospace;
+}
+
+.titulo{
+    font-size: 45px;
+    text-align: center;
+}
+
+.menuOpciones{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: #d7e3fc;
+    border-radius: 25px;
+    margin: auto;
+
+}
+
+.opcion{
+    border-radius: 15px;
+    border: 0px;
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    padding-top: 2%;
+    padding-left: 14%;
+    margin-top: 15%;
+    margin-left: 15%;
+    width: 200px;
+    height: 40px;
+}
+

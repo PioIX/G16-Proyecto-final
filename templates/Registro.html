@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'Registro.css')}}">    
+    </head>
+    <body>
+        <H1> Ingresa tus datos</H1>
+        <div class="tablaRegistro">
+
+            <form>
+
+            <div class="User">
+            <label for="nombre"> Nombre de Usuario: </label> <br>
+            <input type="text" id="nombre" name="nombre" class="insert" class="nombre"> <br>
+            <br>
+            </div>
+
+            <div class="Contra">
+            <label>Contraseña:</label><br>
+            <input type="password" id="contra" name="contra" class="insert" class="contraseña"><br>
+            <br>
+            </div>
+
+            <div class="Contra2">
+            <label>Confirma tu contraseña:</label><br>
+            <input type="password" id="contra2" name="contra2" class="insert" class="contraseña2"><br> 
+            </div>    
+            <br>
+
+            <input  class="confirmarRegistro" value="Confirmar registro" type="submit">
+
+            </form>
+
+        </div>
+
+
+
+    </body>
+</html>
