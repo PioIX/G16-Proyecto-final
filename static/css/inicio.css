@@ -2,19 +2,12 @@ html{
     font-family:monospace;
 }
 
-h1 {
-    font-size:70px;
-    background-color: cadetblue;
-    text-align: center;
-    color: #ffffff;
-}
 
 .titulo{
     background-color: cadetblue;
-    width:1540px;
-    height: 30px;
     margin: auto;
 }
+
 
 label{
     font-size:25px;
@@ -22,25 +15,31 @@ label{
 
 
 body {
-    background-color:#ff9f1c ;
+    background-image: url('fondoInicio.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.registro {
+
+.inicio {
     display: block;
     margin:auto;
-    margin-top:9%;
+    margin-top:10%;
     background-color: #ef476f;
-    height: 475px;
+    height: 450px;
     width: 400px;
     text-align:center;
     border-radius: 20px;
 }
+
 
 .nameInsert{
     margin-left: 15px;
     padding-top: 30px;
     text-align:left ;
 }
+
 
 .passInsert{
     margin-left: 15px;
@@ -55,6 +54,8 @@ input{
     height: 25px;
 }
 
+
+
 /*el boton de ingresar y sus acciones*/
 
 .botonIngresar{
@@ -68,13 +69,16 @@ input{
     border-width: 1px;
 }
 
+
 .botonIngresar:hover{
     background-color: #03045e;
 }
 
+
 .botonIngresar:active{
     background-color: #023047;
 }
+
 
 
 /*el boton de registrar y sus acciones*/
@@ -91,18 +95,22 @@ input{
     
 }
 
+
 .botonRegistrar:hover{
     background-color: #03045e;
 }
+
 
 .botonRegistrar:active{
     background-color: #023047;
 }
 
+
+
 /*el boton que explica las reglas*/
 
 .Reglas{
-    margin-top: 5%;
+    margin-top: 1%;
     margin-left: 2%;
     font-size: 25px;
     color: #ffffff;
@@ -111,11 +119,13 @@ input{
     border-width: 1px;
 }
 
+
 .Reglas:hover{
     background-color: #ef233c;
     border-radius: 10px;
     border-width: 1px;
 }
+
 
 .Reglas:active{
     color: #ffffff;

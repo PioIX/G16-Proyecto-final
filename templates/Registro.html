@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="{{url_for('static', filename = 'Registro.css')}}">    
+        <link rel="stylesheet" href="{{url_for('static', filename = 'css/Registro.css')}}"> 
+      <title>Registrate</title>
     </head>
     <body>
         <H1> Ingresa tus datos</H1>
         <div class="tablaRegistro">
 
-            <form>
-
+            <form action="{{url_for('registro')}}" method="POST">
             <div class="User">
             <label for="nombre"> Nombre de Usuario: </label> <br>
-            <input type="text" id="nombre" name="nombre" class="insert" class="nombre"> <br>
+            <input required type="text" id="nombre" name="nombre" class="insert" class="nombre"> <br>
             <br>
             </div>
 
             <div class="Contra">
-            <label>Contraseña:</label><br>
-            <input type="password" id="contra" name="contra" class="insert" class="contraseña"><br>
+            <label>Contraseña: </label><br>
+            <input required type="password" id="contra" name="contra" class="insert" class="contraseña"><br>
             <br>
             </div>
 
             <div class="Contra2">
-            <label>Confirma tu contraseña:</label><br>
-            <input type="password" id="contra2" name="contra2" class="insert" class="contraseña2"><br> 
+            <label>Confirma tu contraseña: </label><br>
+            <input required type="password" id="contra2" name="contra2" class="insert" class="contraseña2"><br> 
             </div>    
             <br>
 
             <input  class="confirmarRegistro" value="Confirmar registro" type="submit">
-
+            {%if error1 == True%}
+              <h3>Ese Usuario ya existe</h3>
+            {%endif%}
+            {%if error2 == True%}
+              <h3>Las contraseñas no coinciden</h3>
+            {%endif%}
             </form>
-
         </div>
-
-
-
     </body>
 </html>

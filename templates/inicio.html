@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'inicio.css')}}">
-<body>
-    
-  <div class="titulo"><h1>5 en linea flip</h1></div>
-<div class="registro">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/inicio.css')}}">
+<head>
+  <title>Inicio</title>
+</head>
+<body>  
+<div class="inicio">
     <form action="{{url_for('ingreso')}}" method="POST">
         
   <div class="nameInsert"><label>Nombre de usuario:</label></div><br>
@@ -13,16 +15,18 @@
 
   <div class="passInsert"><label>Contraseña:</label></div><br>
     <input required type="password" id="contra" name="contra">
-    <br>
+    <br>    
     <br>
     <button class="botonIngresar" type="submit">Ingresar</button><br>
     <br>
-    </form>  
+    {%if error == True%}
+        <h3>Ese usuario no existe</h3>
+      {%endif%}
+    </form>
+    <form action="{{url_for('registro')}}" method="GET">
     <button class="botonRegistrar" type="submit">Registrar</button>
-    
-    
+    </form>
 </div>
-
     <button class="Reglas" type="button">¿Como son las reglas?</button>
 </body>
 </html>

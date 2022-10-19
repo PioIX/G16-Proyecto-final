@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'menu.css')}}">
-    <head>        
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/menu.css')}}">
+    <head>
+      <title>Bienvenido</title>
+      <h3>Bienvenido {{ nombre }}</h3>
     </head>
     <body>
         <div class="menuOpciones">
 
-            <form action="">
-
+            <form action="{{url_for('salaC')}}" method="GET">
             <input class="opcion" value="Crear sala" type="submit">
-            <input class="opcion" value="Buscar sala" type="submit">
-            <input class="opcion" value="Editar perfil" type="submit">
-            <input class="opcion" value="Ver ranking" type="submit">
-
             </form>
-
+            <form action="{{url_for('salaB')}}" method="GET">
+            <input class="opcion" value="Buscar sala" type="submit">
+            </form>
+            <form action="{{url_for('editPerfil')}}" method="GET">
+            <input class="opcion" value="Edita tu perfil" type="submit">
+            </form>
+            <form action="{{url_for('rankings')}}" method="GET">
+            <input class="opcion" value="Ver Rankings" type="submit">
+            </form>
         </div>
-        
-
-
-
     </body>
 </html>
