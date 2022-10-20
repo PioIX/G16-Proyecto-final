@@ -15,7 +15,7 @@ label{
 
 
 body {
-    background-image: url('fondoInicio.jpg');
+    background-image: url('../fondoInicio.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

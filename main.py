@@ -14,7 +14,7 @@ def index():
 def ingreso():
   if (request.method == "POST"):
     if(request.form["nombre"] !=""):
-      conn = sqlite3.connect('5EnLinea.db')
+      conn = sqlite3.connect('Usuarios.db')
       session['usuario'] = request.form['nombre']
       session['password'] = request.form['contra']
       q = f"""SELECT * FROM Usuarios WHERE Nombre = '{session['usuario']}' and Contraseña = '{session['password']}';"""
@@ -36,7 +36,7 @@ def ingreso():
 def registro():
   if (request.method == "POST"):
     if (request.form["nombre"] != "") and (request.form["contra"] == request.form["contra2"]):
-      conn = sqlite3.connect('5EnLinea.db')
+      conn = sqlite3.connect('Usuarios.db')
       nombre = request.form['nombre']
       contraseña = request.form['contra']
       q = f"""SELECT * FROM Usuarios WHERE Nombre = '{nombre}' and Contraseña = '{contraseña}';"""
@@ -61,6 +61,10 @@ def registro():
 @app.route('/inicio', methods=['GET'])
 def menu():
   return render_template('menu.html', nombre = session['usuario'])
+
+@app.route('/inicioAdmin')
+def menuAdmin():
+  pass
 
 @app.route('/seleccionarSala', methods=['GET'])
 def salaB():
