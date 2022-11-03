@@ -66,6 +66,10 @@ def menu():
 def menuAdmin():
   pass
 
+@app.route('/juego', methods=['GET'])
+def jueguito():
+  return render_template('juego.html')
+
 @app.route('/seleccionarSala', methods=['GET'])
 def salaB():
   return render_template('selectorSalas.html')

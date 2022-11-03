@@ -24,13 +24,13 @@ body {
 
 .inicio {
     display: block;
-    margin:auto;
-    margin-top:10%;
     background-color: #ef476f;
-    height: 450px;
-    width: 400px;
+    height: 50%;
+    width: 25%;
     text-align:center;
     border-radius: 20px;
+    margin:auto;
+    margin-top:10%;
 }
 
 
@@ -50,8 +50,8 @@ body {
 
 input{
     font-size: 20px;
-    width: 220px;
-    height: 25px;
+    width: 10%px;
+    height: 5%px;
 }
 
 
@@ -92,7 +92,7 @@ input{
     height: 30px;
     border-radius: 15px;
     border-width: 1px;
-    
+    margin-bottom:5%;
 }
 
 
@@ -110,7 +110,7 @@ input{
 /*el boton que explica las reglas*/
 
 .Reglas{
-    margin-top: 1%;
+    margin-top: 10%;
     margin-left: 2%;
     font-size: 25px;
     color: #ffffff;
@@ -122,8 +122,6 @@ input{
 
 .Reglas:hover{
     background-color: #ef233c;
-    border-radius: 10px;
-    border-width: 1px;
 }
 
 

@@ -7,7 +7,9 @@
     </head>
     <body>
         <div class="menuOpciones">
-
+            <form action="{{url_for('jueguito')}}" method ="GET">
+            <input class="opcion" value="Modo local" type="submit">
+            </form>
             <form action="{{url_for('salaC')}}" method="GET">
             <input class="opcion" value="Crear sala" type="submit">
             </form>
@@ -18,7 +20,7 @@
             <input class="opcion" value="Edita tu perfil" type="submit">
             </form>
             <form action="{{url_for('rankings')}}" method="GET">
-            <input class="opcion" value="Ver Rankings" type="submit">
+            <input class="opcion rankings" value="Ver Rankings" type="submit">
             </form>
         </div>
     </body>

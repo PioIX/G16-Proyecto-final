@@ -1,4 +1,4 @@
-N<!DOCTYPE html>
+ N<!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="{{url_for('static', 
   filename = 'css/selectorSalas.css')}}">
@@ -10,10 +10,11 @@ N<!DOCTYPE html>
 <h1 class="titulo"> Elige una sala</h1>
 <ul class="lista">
 <li id="sala1" name="sala1"></li>
-<li id="sala2" name="sala2"></li>
-<li id="sala3" name="sala3"></li>
-<li id="sala4" name="sala4"></li>
-<li id="sala5" name="sala5"></li>
+  <h2> {{ nombreSala1 }}  {{ nombre1 }} </h2>
+
+<form action="{{url_for('salaB')}}" method="GET">
+<input class="opcion" value="Actualizar salas" type="submit">
+</form>
 </ul>
 
 </body>
