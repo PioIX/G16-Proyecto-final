@@ -12,3 +12,5 @@ _ HTML (de inicio, registro y para jugar)
 _ Flask (python)
 _ DB (esta va a tener el nombre, contraseña, puntaje y posiblemente ranking si se puede, de cada jugador)
 _ JS (principalmente intermediario del DB y el flask)
+
+
