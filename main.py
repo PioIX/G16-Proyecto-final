@@ -3,7 +3,7 @@ import sqlite3
 
 
 app = Flask(__name__)
-app.secret_key = "jajaxd"
+app.secret_key = "jejexd"
 
 
 @app.route('/')
@@ -72,11 +72,48 @@ def jueguito():
 
 @app.route('/seleccionarSala', methods=['GET'])
 def salaB():
-  return render_template('selectorSalas.html')
+  conn = sqlite3.connect('Usuarios.db')
+  q = f"""SELECT COUNT(*) FROM Salas WHERE Nombre != '';"""
+  resu = conn.execute(q)
+
+  if resu == 1:
+    a = f"""SELECT Nombre FROM Salas WHERE Numero = 1;"""
+    conn.execute(a)
+    session['sala1'] = a
+    conn.commit()
+    conn.close()
+    return render_template('selectorSalas.html', sala1 = session['sala1'])
+  elif resu == 2:
+    a = f"""SELECT Nombre FROM Salas WHERE Numero = 1;"""
+    b = f"""SELECT Nombre FROM Salas WHERE Numero = 2;"""
+    conn.execute(a)
+    conn.execute(b)
+    session['sala1'] = a
+    session['sala2'] = b
+    conn.commit()
+    conn.close()
+    return render_template('selectorSalas.html', sala1 = session['sala1'], sala2 = session['sala2'])
+  elif resu == 3:
+    a = f"""SELECT Nombre FROM Salas WHERE Numero = 1;"""
+    b = f"""SELECT Nombre FROM Salas WHERE Numero = 2;"""
+    c = f"""SELECT Nombre FROM Salas WHERE Numero = 3;"""
+    conn.execute(a)
+    conn.execute(b)
+    conn.execute(c)
+    session['sala1'] = a
+    session['sala2'] = b
+    session['sala3'] = c
+    conn.commit()
+    conn.close()
+    return render_template('selectorSalas.html', sala1 = session['sala1'], sala2 = session['sala2'], sala3 = session['sala3'])
+    
+  else:
+    return render_template('selectorSalas.html')
 
 @app.route('/crearSala', methods=['GET'])
 def salaC():
   return render_template('creadorSalas.html')
+
 
 @app.route('/editarPerfil', methods=['GET'])
 def editPerfil():

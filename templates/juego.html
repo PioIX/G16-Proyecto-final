@@ -6,73 +6,76 @@
       <body>
 
         <div class="mesa">
-        <input type="button" class="Aderecha giro">
-          <img  class="Aderecha giro" src="/static/Imagenes/Flechas/ArribaDerecha.png">
-        </input>
-        <input type="button" class="Aizquierda giro">
-        <input type="button" class="Bizquierda giro">
-        <input type="button" class="Bderecha giro">
+
+<h1 class="turno" > Es el turno De:  <br>
+  <h1 id=turnoActual > </h1>
+</h1>
+  
+<input type="button" onclick=girarDerecha(A) class="Aderecha giro">
+<input type="button" onclick=girarIzquierda(A) class="Aizquierda giro">
+<input type="button" onclick=girarIzquierda(B) class="Bizquierda giro">
+<input type="button" onclick=girarDerecha(B) class="Bderecha giro">
 
 
         <div class="cuadrilla">
 
         <div class="cuadranteA cuadrante">
-        <button class="A1 pos1" type="button">1-1</button>
-        <button class="A2 pos2" type="button">1-2</button>
-        <button class="A3 pos3" type="button">1-3</button>
-        <button class="A4 pos4" type="button">2-1</button>
-        <button class="A5 pos5" type="button">2-2</button>
-        <button class="A6 pos6" type="button">2-3</button>
-        <button class="A7 pos7" type="button">3-1</button>
-        <button class="A8 pos8" type="button">3-2</button>
-        <button class="A9 pos9" type="button">3-3</button>
+        <button class="A1 pos1" onclick=colocarficha(1,1) id="A1" type="button"></button>
+        <button class="A2 pos2" id="A2" type="button"></button>
+        <button class="A3 pos3" id="A3" type="button"></button>
+        <button class="A4 pos4" id="A4" type="button"></button>
+        <button class="A5 pos5" id="A5" type="button"></button>
+        <button class="A6 pos6" id="A6" type="button"></button>
+        <button class="A7 pos7" id="A7" type="button"></button>
+        <button class="A8 pos8" id="A8" type="button"></button>
+        <button class="A9 pos9" id="A9" type="button"></button>
         </div>
 
         <div class="cuadranteB cuadrante">
-        <button class="B1 pos1" type="button">1-4</button>
-        <button class="B2 pos2" type="button">1-5</button>
-        <button class="B3 pos3" type="button">1-6</button>
-        <button class="B4 pos4" type="button">2-4</button>
-        <button class="B5 pos5" type="button">2-5</button>
-        <button class="B6 pos6" type="button">2-6</button>
-        <button class="B7 pos7" type="button">3-4</button>
-        <button class="B8 pos8" type="button">3-5</button>
-        <button class="B9 pos9" type="button">3-6</button>
+        <button class="B1 pos1" type="button"></button>
+        <button class="B2 pos2" type="button"></button>
+        <button class="B3 pos3" type="button"></button>
+        <button class="B4 pos4" type="button"></button>
+        <button class="B5 pos5" type="button"></button>
+        <button class="B6 pos6" type="button"></button>
+        <button class="B7 pos7" type="button"></button>
+        <button class="B8 pos8" type="button"></button>
+        <button class="B9 pos9" type="button"></button>
         </div>
 
         <div class="cuadranteC cuadrante">
-        <button class="C1 pos1" type="button">4-1</button>
-        <button class="C2 pos2" type="button">4-2</button>
-        <button class="C3 pos3" type="button">4-3</button>
-        <button class="C4 pos4" type="button">5-1</button>
-        <button class="C5 pos5" type="button">5-2</button>
-        <button class="C6 pos6" type="button">5-3</button>
-        <button class="C7 pos7" type="button">6-1</button>
-        <button class="C8 pos8" type="button">6-2</button>
-        <button class="C9 pos9" type="button">6-3</button>
+        <button class="C1 pos1" type="button"></button>
+        <button class="C2 pos2" type="button"></button>
+        <button class="C3 pos3" type="button"></button>
+        <button class="C4 pos4" type="button"></button>
+        <button class="C5 pos5" type="button"></button>
+        <button class="C6 pos6" type="button"></button>
+        <button class="C7 pos7" type="button"></button>
+        <button class="C8 pos8" type="button"></button>
+        <button class="C9 pos9" type="button"></button>
         </div>
         
         <div class="cuadranteD cuadrante">
-        <button class="D1 pos1" type="button">4-4</button>
-        <button class="D2 pos2" type="button">4-5</button>
-        <button class="D3 pos3" type="button">4-6</button>
-        <button class="D4 pos4" type="button">5-4</button>
-        <button class="D5 pos5" type="button">5-5</button>
-        <button class="D6 pos6" type="button">5-6</button>
-        <button class="D7 pos7" type="button">6-4</button>
-        <button class="D8 pos8" type="button">6-5</button>
-        <button class="D9 pos9" type="button">6-6</button>
+        <button class="D1 pos1" type="button"></button>
+        <button class="D2 pos2" type="button"></button>
+        <button class="D3 pos3" type="button"></button>
+        <button class="D4 pos4" type="button"></button>
+        <button class="D5 pos5" type="button"></button>
+        <button class="D6 pos6" type="button"></button>
+        <button class="D7 pos7" type="button"></button>
+        <button class="D8 pos8" type="button"></button>
+        <button class="D9 pos9" type="button"></button>
         </div>
         
         </div>
 
-        <input type="button" class="Cderecha giro">
-        <input type="button" class="Cizquierda giro">
-        <input type="button" class="Dizquierda giro">
-        <input type="button" class="Dderecha giro">
+        <input type="button" onclick=girarDerecha(C) class="Cderecha giro">
+        <input type="button" onclick=girarIzquierda(D) class="Cizquierda giro">
+        <input type="button" onclick=girarIzquierda(D) class="Dizquierda giro">
+        <input type="button" onclick=girarDerecha(D) class="Dderecha giro">
 
         </div>
-
+<script src='/static/juego(local).js'></script>
     </body>
 
 </html>

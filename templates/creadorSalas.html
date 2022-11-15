@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/creadorSalas.css')}}"
   <head>
-    
   </head>
-  <body>
-    
-  </body>  
+   <body>
+    <div class="tablaDeSala">
+      <h1>Sala</h1>
+      <p class="admin jugador">Jugador 1|puntos|ranking</p>
+      <p class="invitado jugador">Jugador 2|puntos|ranking</p>
+      <input class="Iniciar boton" type="submit" value="Iniciar partida">
+      <input class="BorrarSala boton" type="submit" value="Borrar sala">
+      <input class="VolverMenu boton" type="submit" value="Vover al menu">
+    </div>
+  </body>   
 </html>

@@ -1,0 +1,67 @@
+body{
+  background-color: #2a9d8f;
+  font-family: monospace;
+}
+
+h1{
+  font-size: 800%;
+  grid-area: 1 / 3 / 2 / 6;
+  margin-top: 1%;
+
+}
+
+.tablaDeSala{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #e76f51;
+  width: 80%;
+  height: 16cm;
+  margin: auto;
+  text-align: center;
+  border-radius: 50px;
+  margin-top: 5%;
+}
+
+.jugador{
+  margin-top: 1%;
+  font-size: 200%;
+}
+
+.boton{
+  width: 100%;
+  height:2cm;
+  margin-top: 25%;
+  font-size: 25px;
+  border-radius: 50px;
+  color: #ffff;
+  background-color: #e63946;
+  border: 0px;
+}
+
+.boton:hover{
+  background-color: #9d0208;
+}
+
+.Iniciar{
+  grid-area: 6 / 2 / 7 / 3;
+}
+
+.VolverMenu{
+  grid-area: 6 / 4 / 7 / 5;
+}
+
+.BorrarSala{
+  grid-area: 6 / 6 / 7 / 7;
+}
+
+.admin{
+  grid-area: 3 / 2 / 4 / 7; 
+}
+
+.invitado{
+  grid-area: 4 / 2 / 5 / 7
+}
+
