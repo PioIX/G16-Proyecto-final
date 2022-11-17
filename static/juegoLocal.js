@@ -1,12 +1,8 @@
-
-
-
 function IniciarPartida(){
     vaciarTablero()
     Turnos = 1
-    jugadorActual = jugador1
-    const = fichaColocada = false
-  
+    jugadorActual = "jugador1"
+    fichaColocada = false
     /*
       Jugadores:
       1 - Azul
@@ -14,13 +10,10 @@ function IniciarPartida(){
     */
   }
 
-//  document.getElementById("A1").style.backgroundColor = "red"
-
-  const = jugadorActual = jugador1
-  const = fichaColocada = false
-  
-  
-  const tablero = [
+var jugadorActual = "jugador1"
+var fichaColocada = false
+    
+const tablero = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -29,6 +22,8 @@ function IniciarPartida(){
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
   ];
+
+const cuadranteCopia = tablero
   
 //tablero[filas][columnas]
 //A1
@@ -47,11 +42,11 @@ function IniciarPartida(){
 //      6-1 , 6-2 , 6-3)         6-4 , 6-5 , 6-6)
 //
   
-  document.getElementById("").textContent = 
+// document.getElementById("turnoActual").textContent = jugadorActual
   
   
-  function vaciarTablero() {
-  tablero = [
+function vaciarTablero() {
+var  tablero = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -61,36 +56,75 @@ function IniciarPartida(){
     [0, 0, 0, 0, 0, 0, 0]
                         ];
   }
-  
-  function colocarFicha(fila, columna) {
-    if( jugador != -1 ) {
-      if (jugadorActual == jugador1 ){
-      tablero[fila][columna] = 1}
-      else {
-        tablero[fila][columna] = 2
+
+
+
+function colocarFicha(fila, columna) {
+      if (jugadorActual == "jugador1" && fichaColocada != true ){
+        tablero[fila][columna] = 1
+        fichaColocada = true
+        repintar(fila,columna)
       }
-    }
-  
-  
+      else if (jugadorActual == "jugador2" && fichaColocada != true ) {
+        tablero[fila][columna] = 2
+        fichaColocada = true
+        repintar(fila,columna)
+      }
+      
   }
-  
-  
-  function guardarValores(cuadrante) {
+
+function repintar (fila, columna) {  
+    if (tablero[fila][columna] == 0){
+        if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains("naranja") ){
+        document.getElementById(String(fila)+"-"+String(columna)).classList.remove("naranja")
+        document.getElementById(String(fila)+"-"+String(columna)).classList.add("blanco")
+        }
+        else if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains("verde") ){
+        document.getElementById(String(fila)+"-"+String(columna)).classList.remove("verde")
+        document.getElementById(String(fila)+"-"+String(columna)).classList.add("blanco")
+        }
+        }// se vuelve blanco
+
+    else if (tablero[fila][columna] == 1){
+        if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains("blanco") ){
+        document.getElementById(String(fila)+"-"+String(columna)).classList.remove("blanco")
+        document.getElementById(String(fila)+"-"+String(columna)).classList.add("naranja")
+        }
+        else if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains("verde") ){
+        document.getElementById(String(fila)+"-"+String(columna)).classList.remove("verde")
+        document.getElementById(String(fila)+"-"+String(columna)).classList.add("naranja")
+        }
+        }// se vuelve naranja
+
+    else if (tablero[fila][columna] == 2){
+        if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains("blanco") ){
+        document.getElementById(String(fila)+"-"+String(columna)).classList.remove("blanco")
+        document.getElementById(String(fila)+"-"+String(columna)).classList.add("verde")
+        }
+        else if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains("naranja") ){
+        document.getElementById(String(fila)+"-"+String(columna)).classList.remove("naranja")
+        document.getElementById(String(fila)+"-"+String(columna)).classList.add("verde")
+        }
+        }// se vuelve verde
+  }
+     
+function guardarValores(cuadrante) {
     return {...cuadrante};  
   }
   
-  function girarIzquierda(cuadrante){
+function girarIzquierda(cuadrante){
     if (fichaColocada == true){
         fichaColocada = false
-        if (jugadorActual == jugador1){
-          jugadorActual = jugador2
+        if (jugadorActual == "jugador1"){
+          jugadorActual = "jugador2"
         }
         else {
-          jugadorActual = jugador1 
+          jugadorActual = "jugador1" 
         }
+      
     
     switch(cuadrante){
-      case "A":
+      case string(cuadrante) = "A":
         tablero[1][1] = cuadranteCopia[1][3]
         tablero[3][1] = cuadranteCopia[1][1]
         tablero[3][3] = cuadranteCopia[3][1]
@@ -103,7 +137,7 @@ function IniciarPartida(){
 
         break;
         
-      case "B":
+      case string(cuadrante) = "B":
         tablero[1][4] = cuadranteCopia[1][6]
         tablero[1][6] = cuadranteCopia[3][6]
         tablero[3][6] = cuadranteCopia[3][4]
@@ -116,7 +150,7 @@ function IniciarPartida(){
         
         break;
 
-      case "C":
+      case string(cuadrante) = "C":
         tablero[4][1] = cuadranteCopia[4][3]
         tablero[4][3] = cuadranteCopia[6][3]
         tablero[6][3] = cuadranteCopia[6][1]
@@ -129,7 +163,7 @@ function IniciarPartida(){
         
         break;
 
-      case "D":
+      case string(cuadrante) = "D":
         tablero[4][4] = cuadranteCopia[4][6]
         tablero[4][6] = cuadranteCopia[6][6]
         tablero[6][6] = cuadranteCopia[6][4]
@@ -142,17 +176,18 @@ function IniciarPartida(){
 
         break;        
       }
+      victoria()
     }
   }
 
-  function girarDerecha(cuadrante){
+function girarDerecha(cuadrante){
     if (fichaColocada == true){
         fichaColocada = false
-        if (jugadorActual == jugador1){
-          jugadorActual = jugador2
+        if (jugadorActual == "jugador1"){
+          jugadorActual = "jugador2"
         }
         else {
-          jugadorActual = jugador1 
+          jugadorActual = "jugador1" 
         }
       switch(cuadrante){
         case "A":
@@ -207,6 +242,7 @@ function IniciarPartida(){
 
         break;        
       }
+    victoria()
     } 
   }
 
@@ -245,7 +281,7 @@ function victoria() {
     else 
       offset = 0
     
-    suma = tablero[fila][1 + offset];
+    suma = tablero[fila][offset + 1];
     for(columna = 2 + offset; columna <= 6; columna++) {
       if (tablero[fila][columna] == tablero[fila][columna - 1])
         suma += tablero[fila][columna];
@@ -266,34 +302,34 @@ function victoria() {
   // diagonales derecha abajo
     if(tablero[1][1]!=0 && tablero[1][1] == tablero[2][2] && tablero[1][1] == tablero[3][3] && tablero[1][1] == tablero[4][4] && tablero[1][1] == tablero[5][5]){
         if (tablero[1][1] == 1) {
-          jugador1.gana = true
+          "jugador1".gana = true
         }
         else if (tablero[1][1] == 2)
-          jugador2.gana = true
+          "jugador2".gana = true
     }
 
     if(tablero[2][2]!=0 && tablero[2][2] == tablero[3][3] && tablero[2][2] == tablero[4][4] && tablero[2][2] == tablero[5][5] && tablero[2][2] == tablero[6][6]){
         if (tablero[2][2] == 1) {
-          jugador1.gana = true
+          "jugador1".gana = true
         }
         else if (tablero[2][2] == 2)
-          jugador2.gana = true
+          "jugador2".gana = true
     }
 
     if(tablero[1][2]!=0 && tablero[1][2] == tablero[2][3] && tablero[1][2] == tablero[3][4] && tablero[1][2] == tablero[4][5] && tablero[1][2] == tablero[5][6]){
         if (tablero[1][2] == 1) {
-          jugador1.gana = true
+          "jugador1".gana = true
         }
         else if (tablero[1][2] == 2)
-          jugador2.gana = true
+          "jugador2".gana = true
     }
 
     if(tablero[2][1]!=0 && tablero[2][1] == tablero[3][2] && tablero[2][1] == tablero[4][3] && tablero[2][1] == tablero[5][4] && tablero[2][1] == tablero[6][5]){
         if (tablero[2][1] == 1) {
-          jugador1.gana = true
+          "jugador1".gana = true
         }
         else if (tablero[2][1] == 2)
-          jugador2.gana = true
+          "jugador2".gana = true
     }
 
 // diagonales izquierda abajo
@@ -308,35 +344,34 @@ function victoria() {
 
     if(tablero[1][5]!=0 && tablero[2][4] == tablero[1][5] && tablero[3][3] == tablero[1][5] && tablero[4][2] == tablero[1][5] && tablero[5][1] == tablero[1][5] ){
         if (tablero[1][5] == 1) {
-          jugador1.gana = true
+          "jugador1".gana = true
         }
         else if (tablero[1][5] == 2)
-          jugador2.gana = true
+          "jugador2".gana = true
     }
 
     if(tablero[2][6]!=0 && tablero[3][5] == tablero[2][6] && tablero[4][4] == tablero[2][6] && tablero[5][3] == tablero[2][6] && tablero[6][2] == tablero[2][6] ){
         if (tablero[2][6] == 1) {
-          jugador1.gana = true
+          "jugador1".gana = true
         }
         else if (tablero[2][6] == 2)
-          jugador2.gana = true
+          "jugador2".gana = true
     } 
 
   
   }
-    if (jugador1.gana == true && jugador2.gana == true){
+    if ("jugador1".gana == true && "jugador2".gana == true){
       // empate   (\0 o 0/)
       //          ( \   / )
     }
-    else if (jugador1.gana == true){
+    else if ("jugador1".gana == true){
       // felicidades ganaste \(pup)/
     }
-    else if(jugador2.gana == true){
+    else if("jugador2".gana == true){
       // felicidades ganaste \(pup)/ 
     }
 }
 
-
-
-
-
+  window.onload = function() {
+   IniciarPartida();
+  }

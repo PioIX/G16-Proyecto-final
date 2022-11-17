@@ -176,10 +176,6 @@ body{
     margin: auto;
 }
 
-.cuadrante > button:hover{
-    background-color: #495057;
-}
-
 
 .pos1{
     display: grid;
@@ -236,4 +232,28 @@ body{
     display: grid;
     border-radius: 75px;
     grid-area: 3 / 3 / 4 / 4;
+}
+
+.blanco{
+  background-color:#FFFFFF;
+}
+
+.blanco:hover{
+  background-color: #e5e5e5;
+}
+
+.naranja{
+  background-color:#f48c06;
+}
+
+.naranja: hover{
+  background-color:#bb3e03;
+}
+
+.verde{
+  background-color: #55a630;
+}
+
+.verde:hover{
+  background-color: #2b9348;
 }

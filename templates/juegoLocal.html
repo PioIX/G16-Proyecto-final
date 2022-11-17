@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/juego.css')}}">
+    <head>
+    </head>
+      <body>
+
+        <div class="mesa">
+
+<h1 class="turno" > Es el turno De:  <br>
+  <h1  class="turno" id=turnoActual > </h1>
+</h1>
+  
+<input type="button" onclick="girarDerecha('A')" class="Aderecha giro">
+<input type="button" onclick="girarIzquierda('A')" class="Aizquierda giro">
+<input type="button" onclick="girarIzquierda('B')" class="Bizquierda giro">
+<input type="button" onclick="girarDerecha('B')" class="Bderecha giro">
+          
+        <div class="cuadrilla">
+
+    <div class="cuadranteA cuadrante">
+    <button class="A1 pos1 blanco" onclick=colocarFicha(1,1) id="1-1" type="button"></button>
+    <button class="A2 pos2 blanco" onclick=colocarFicha(1,2) id="1-2" type="button"></button>
+    <button class="A3 pos3 blanco" onclick=colocarFicha(1,3) id="1-3" type="button"></button>
+    <button class="A4 pos4 blanco" onclick=colocarFicha(2,1) id="2-1" type="button"></button>
+    <button class="A5 pos5 blanco" onclick=colocarFicha(2,2) id="2-2" type="button"></button>
+    <button class="A6 pos6 blanco" onclick=colocarFicha(2,3) id="2-3" type="button"></button>
+    <button class="A7 pos7 blanco" onclick=colocarFicha(3,1) id="3-1" type="button"></button>
+    <button class="A8 pos8 blanco" onclick=colocarFicha(3,2) id="3-2" type="button"></button>
+    <button class="A9 pos9 blanco" onclick=colocarFicha(3,3) id="3-3" type="button"></button>
+    </div>
+
+    <div class="cuadranteB cuadrante">
+    <button class="B1 pos1 blanco" onclick=colocarFicha(1,4) id="1-4" type="button"></button>
+    <button class="B2 pos2 blanco" onclick=colocarFicha(1,5) id="1-5" type="button"></button>
+    <button class="B3 pos3 blanco" onclick=colocarFicha(1,6) id="1-6" type="button"></button>
+    <button class="B4 pos4 blanco" onclick=colocarFicha(2,4) id="2-4" type="button"></button>
+    <button class="B5 pos5 blanco" onclick=colocarFicha(2,5) id="2-5" type="button"></button>
+    <button class="B6 pos6 blanco" onclick=colocarFicha(2,6) id="2-6" type="button"></button>
+    <button class="B7 pos7 blanco" onclick=colocarFicha(3,4) id="3-4" type="button"></button>
+    <button class="B8 pos8 blanco" onclick=colocarFicha(3,5) id="3-5" type="button"></button>
+    <button class="B9 pos9 blanco" onclick=colocarFicha(3,6) id="3-5" type="button"></button>
+    </div>
+
+    <div class="cuadranteC cuadrante">
+    <button class="C1 pos1 blanco" onclick=colocarFicha(4,1) id="4-1" type="button"></button>
+    <button class="C2 pos2 blanco" onclick=colocarFicha(4,2) id="4-2" type="button"></button>
+    <button class="C3 pos3 blanco" onclick=colocarFicha(4,3) id="4-3" type="button"></button>
+    <button class="C4 pos4 blanco" onclick=colocarFicha(5,1) id="5-1" type="button"></button>
+    <button class="C5 pos5 blanco" onclick=colocarFicha(5,2) id="5-2" type="button"></button>
+    <button class="C6 pos6 blanco" onclick=colocarFicha(5,3) id="5-3" type="button"></button>
+    <button class="C7 pos7 blanco" onclick=colocarFicha(6,1) id="6-1" type="button"></button>
+    <button class="C8 pos8 blanco" onclick=colocarFicha(6,2) id="6-2" type="button"></button>
+    <button class="C9 pos9 blanco" onclick=colocarFicha(6,3) id="6-3" type="button"></button>
+    </div>
+    
+    <div class="cuadranteD cuadrante">
+    <button class="D1 pos1 blanco" onclick=colocarFicha(4,4) id="4-4" type="button"></button>
+    <button class="D2 pos2 blanco" onclick=colocarFicha(4,5) id="4-5" type="button"></button>
+    <button class="D3 pos3 blanco" onclick=colocarFicha(4,6) id="4-6" type="button"></button>
+    <button class="D4 pos4 blanco" onclick=colocarFicha(5,4) id="5-4" type="button"></button>
+    <button class="D5 pos5 blanco" onclick=colocarFicha(5,5) id="5-5" type="button"></button>
+    <button class="D6 pos6 blanco" onclick=colocarFicha(5,6) id="5-6" type="button"></button>
+    <button class="D7 pos7 blanco" onclick=colocarFicha(6,4) id="6-4" type="button"></button>
+    <button class="D8 pos8 blanco" onclick=colocarFicha(6,5) id="6-5" type="button"></button>
+    <button class="D9 pos9 blanco" onclick=colocarFicha(6,6) id="6-6" type="button"></button>
+    </div>
+    
+    </div>
+
+        <input type="button" onclick="girarDerecha('C')" class="Cderecha giro">
+        <input type="button" onclick="girarIzquierda('C')" class="Cizquierda giro">
+        <input type="button" onclick="girarIzquierda('D')" class="Dizquierda giro">
+        <input type="button" onclick="girarDerecha('D')" class="Dderecha giro">
+
+        </div>
+<script src='/static/juegoLocal.js'>
+
+
+</script>
+    </body>
+
+</html>

@@ -68,7 +68,8 @@ def menuAdmin():
 
 @app.route('/juego', methods=['GET'])
 def jueguito():
-  return render_template('juego.html')
+  
+  return render_template('juegoLocal.html')
 
 @app.route('/seleccionarSala', methods=['GET'])
 def salaB():
@@ -76,37 +77,15 @@ def salaB():
   q = f"""SELECT COUNT(*) FROM Salas WHERE Nombre != '';"""
   resu = conn.execute(q)
 
-  if resu == 1:
-    a = f"""SELECT Nombre FROM Salas WHERE Numero = 1;"""
-    conn.execute(a)
-    session['sala1'] = a
-    conn.commit()
-    conn.close()
-    return render_template('selectorSalas.html', sala1 = session['sala1'])
-  elif resu == 2:
-    a = f"""SELECT Nombre FROM Salas WHERE Numero = 1;"""
-    b = f"""SELECT Nombre FROM Salas WHERE Numero = 2;"""
-    conn.execute(a)
-    conn.execute(b)
-    session['sala1'] = a
-    session['sala2'] = b
-    conn.commit()
-    conn.close()
-    return render_template('selectorSalas.html', sala1 = session['sala1'], sala2 = session['sala2'])
-  elif resu == 3:
-    a = f"""SELECT Nombre FROM Salas WHERE Numero = 1;"""
-    b = f"""SELECT Nombre FROM Salas WHERE Numero = 2;"""
-    c = f"""SELECT Nombre FROM Salas WHERE Numero = 3;"""
-    conn.execute(a)
-    conn.execute(b)
-    conn.execute(c)
-    session['sala1'] = a
-    session['sala2'] = b
-    session['sala3'] = c
-    conn.commit()
-    conn.close()
-    return render_template('selectorSalas.html', sala1 = session['sala1'], sala2 = session['sala2'], sala3 = session['sala3'])
-    
+  if resu > 0:
+    salas = {}
+    a = 1
+    for i in resu:
+      g = f"""SELECT Nombre FROM Salas WHERE Numero = '{a}'"""
+      cant = conn.execute(g)
+      a += 1
+      salas.append(cant)
+    return render_template('selectorSalas.html', nombres = salas)
   else:
     return render_template('selectorSalas.html')
 
