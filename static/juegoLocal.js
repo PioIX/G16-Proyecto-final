@@ -22,8 +22,6 @@ const tablero = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
   ];
-
-const cuadranteCopia = tablero
   
 //tablero[filas][columnas]
 //A1
@@ -75,7 +73,7 @@ function colocarFicha(fila, columna) {
 
 function repintar (fila, columna) {  
     if (tablero[fila][columna] == 0){
-        if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains("naranja") ){
+        if(document.getElementById(String(fila)+"-"+String(columna)).classList.contains('naranja') ){
         document.getElementById(String(fila)+"-"+String(columna)).classList.remove("naranja")
         document.getElementById(String(fila)+"-"+String(columna)).classList.add("blanco")
         }
@@ -109,7 +107,7 @@ function repintar (fila, columna) {
   }
      
 function guardarValores(cuadrante) {
-    return {...cuadrante};  
+    return JSON.parse(JSON.stringify(cuadrante));  
   }
   
 function girarIzquierda(cuadrante){
@@ -122,57 +120,94 @@ function girarIzquierda(cuadrante){
           jugadorActual = "jugador1" 
         }
       
-    
-    switch(cuadrante){
-      case string(cuadrante) = "A":
-        tablero[1][1] = cuadranteCopia[1][3]
-        tablero[3][1] = cuadranteCopia[1][1]
-        tablero[3][3] = cuadranteCopia[3][1]
-        tablero[1][3] = cuadranteCopia[3][3]
+    let cuadranteCopia = guardarValores(tablero);
+      
+    switch(String(cuadrante)){
+      case "A":
+        tablero[1][1] = cuadranteCopia[1][3] 
+        tablero[3][1] = cuadranteCopia[1][1] 
+        tablero[3][3] = cuadranteCopia[3][1] 
+        tablero[1][3] = cuadranteCopia[3][3] 
 
-        tablero[1][2] = cuadranteCopia[2][3]
-        tablero[2][3] = cuadranteCopia[3][2]
-        tablero[3][2] = cuadranteCopia[2][1]
-        tablero[2][1] = cuadranteCopia[1][2]
+        tablero[1][2] = cuadranteCopia[2][3] 
+        tablero[2][3] = cuadranteCopia[3][2] 
+        tablero[3][2] = cuadranteCopia[2][1] 
+        tablero[2][1] = cuadranteCopia[1][2] 
+
+        repintar(1,2)
+        repintar(2,3)
+        repintar(3,2)
+        repintar(2,1)
+        repintar(1,1)
+        repintar(3,1)
+        repintar(3,3)
+        repintar(1,3)
 
         break;
         
-      case string(cuadrante) = "B":
-        tablero[1][4] = cuadranteCopia[1][6]
-        tablero[1][6] = cuadranteCopia[3][6]
-        tablero[3][6] = cuadranteCopia[3][4]
-        tablero[3][4] = cuadranteCopia[1][4]
+      case "B":
+        tablero[1][4] = cuadranteCopia[1][6] 
+        tablero[1][6] = cuadranteCopia[3][6] 
+        tablero[3][6] = cuadranteCopia[3][4] 
+        tablero[3][4] = cuadranteCopia[1][4] 
 
-        tablero[1][5] = cuadranteCopia[2][6]
-        tablero[2][6] = cuadranteCopia[3][5]
-        tablero[3][5] = cuadranteCopia[2][4]
-        tablero[2][4] = cuadranteCopia[1][5]
+        tablero[1][5] = cuadranteCopia[2][6] 
+        tablero[2][6] = cuadranteCopia[3][5] 
+        tablero[3][5] = cuadranteCopia[2][4] 
+        tablero[2][4] = cuadranteCopia[1][5] 
+        
+        repintar(1,5)
+        repintar(2,6)
+        repintar(3,5)
+        repintar(2,4)
+        repintar(1,4)
+        repintar(1,6)
+        repintar(3,6)
+        repintar(3,4)
+
+        break;
+
+      case "C":
+        tablero[4][1] = cuadranteCopia[4][3] 
+        tablero[4][3] = cuadranteCopia[6][3] 
+        tablero[6][3] = cuadranteCopia[6][1] 
+        tablero[6][1] = cuadranteCopia[4][1] 
+
+        tablero[4][2] = cuadranteCopia[5][3] 
+        tablero[5][3] = cuadranteCopia[6][2] 
+        tablero[6][2] = cuadranteCopia[5][1] 
+        tablero[5][1] = cuadranteCopia[4][2] 
+
+        repintar(4,1)
+        repintar(4,3)
+        repintar(6,3)
+        repintar(6,1)
+        repintar(4,2)
+        repintar(5,3)
+        repintar(6,2)
+        repintar(5,1)
         
         break;
 
-      case string(cuadrante) = "C":
-        tablero[4][1] = cuadranteCopia[4][3]
-        tablero[4][3] = cuadranteCopia[6][3]
-        tablero[6][3] = cuadranteCopia[6][1]
-        tablero[6][1] = cuadranteCopia[6][1]
+      case "D":
+        tablero[4][4] = cuadranteCopia[4][6] 
+        tablero[4][6] = cuadranteCopia[6][6] 
+        tablero[6][6] = cuadranteCopia[6][4] 
+        tablero[6][4] = cuadranteCopia[4][4] 
 
-        tablero[4][2] = cuadranteCopia[5][3]
-        tablero[5][3] = cuadranteCopia[6][2]
-        tablero[6][2] = cuadranteCopia[5][1]
-        tablero[5][1] = cuadranteCopia[4][2]
-        
-        break;
+        tablero[4][5] = cuadranteCopia[5][6] 
+        tablero[5][6] = cuadranteCopia[6][5] 
+        tablero[6][5] = cuadranteCopia[5][4] 
+        tablero[5][4] = cuadranteCopia[4][5] 
 
-      case string(cuadrante) = "D":
-        tablero[4][4] = cuadranteCopia[4][6]
-        tablero[4][6] = cuadranteCopia[6][6]
-        tablero[6][6] = cuadranteCopia[6][4]
-        tablero[6][4] = cuadranteCopia[4][4]
-
-        tablero[4][5] = cuadranteCopia[5][6]
-        tablero[5][6] = cuadranteCopia[6][5]
-        tablero[6][5] = cuadranteCopia[5][4]
-        tablero[5][4] = cuadranteCopia[4][5]
+        repintar(4,5)
+        repintar(5,6)
+        repintar(6,5)
+        repintar(5,4)
+        repintar(4,4)
+        repintar(4,6)
+        repintar(6,6)
+        repintar(6,4)
 
         break;        
       }
@@ -189,6 +224,11 @@ function girarDerecha(cuadrante){
         else {
           jugadorActual = "jugador1" 
         }
+      
+     cuadranteCopia = guardarValores(tablero);
+
+  
+      
       switch(cuadrante){
         case "A":
           tablero[1][3] = cuadranteCopia[1][1]
@@ -200,45 +240,81 @@ function girarDerecha(cuadrante){
           tablero[3][2] = cuadranteCopia[2][3]
           tablero[2][1] = cuadranteCopia[3][2]
           tablero[1][2] = cuadranteCopia[2][1]
-  
+
+          repintar(2,3)
+          repintar(3,2)
+          repintar(2,1)
+          repintar(1,2)
+          repintar(1,3)
+          repintar(1,1)          
+          repintar(3,1)
+          repintar(3,3)
+         
         break;
         
         case "B":
           tablero[1][6] = cuadranteCopia[1][4]
-          tablero[3][6] = cuadranteCopia[1][6]
-          tablero[3][4] = cuadranteCopia[3][6]
           tablero[1][4] = cuadranteCopia[3][4]
+          tablero[3][4] = cuadranteCopia[3][6]
+          tablero[3][6] = cuadranteCopia[1][6]
 
-          tablero[2][6] = cuadranteCopia[1][5]
-          tablero[3][5] = cuadranteCopia[2][6]
-          tablero[2][4] = cuadranteCopia[3][5]
           tablero[1][5] = cuadranteCopia[2][4]
+          tablero[2][4] = cuadranteCopia[3][5]
+          tablero[3][5] = cuadranteCopia[2][6]
+          tablero[2][6] = cuadranteCopia[1][5]
         
+          repintar(2,6)
+          repintar(3,5)
+          repintar(2,4)
+          repintar(1,5)
+          repintar(1,6)
+          repintar(3,6)          
+          repintar(3,4)
+          repintar(1,4)
+
         break;
 
         case "C":
-          tablero[4][1] = cuadranteCopia[4][3]
-          tablero[4][3] = cuadranteCopia[6][3]
-          tablero[6][3] = cuadranteCopia[6][1]
-          tablero[6][1] = cuadranteCopia[6][1]
+          tablero[4][1] = cuadranteCopia[6][1]
+          tablero[6][1] = cuadranteCopia[6][3]
+          tablero[6][3] = cuadranteCopia[4][3]
+          tablero[4][3] = cuadranteCopia[4][1]
 
-          tablero[4][2] = cuadranteCopia[5][3]
-          tablero[5][3] = cuadranteCopia[6][2]
-          tablero[6][2] = cuadranteCopia[5][1]
-          tablero[5][1] = cuadranteCopia[4][2]
-        
+          tablero[4][2] = cuadranteCopia[5][1]
+          tablero[5][1] = cuadranteCopia[6][2]
+          tablero[6][2] = cuadranteCopia[5][3]
+          tablero[5][3] = cuadranteCopia[4][2]
+
+          repintar(4,2)
+          repintar(5,3)
+          repintar(6,2)
+          repintar(5,1)
+          repintar(4,1)
+          repintar(4,3)
+          repintar(6,3)
+          repintar(6,1)
+
         break;
 
         case "D":
-          tablero[4][6] = cuadranteCopia[4][4]
-          tablero[6][6] = cuadranteCopia[4][6]
-          tablero[6][4] = cuadranteCopia[6][6]
           tablero[4][4] = cuadranteCopia[6][4]
+          tablero[6][4] = cuadranteCopia[6][6]
+          tablero[6][6] = cuadranteCopia[4][6]
+          tablero[4][6] = cuadranteCopia[4][4]
 
           tablero[5][6] = cuadranteCopia[4][5]
           tablero[6][5] = cuadranteCopia[5][6]
           tablero[5][4] = cuadranteCopia[6][5]
           tablero[4][5] = cuadranteCopia[5][4]
+
+          repintar(5,6)
+          repintar(6,5)
+          repintar(5,4)
+          repintar(4,5)
+          repintar(4,6)
+          repintar(6,6)
+          repintar(6,4)
+          repintar(4,4)
 
         break;        
       }
@@ -246,61 +322,203 @@ function girarDerecha(cuadrante){
     } 
   }
 
-function victoria() {
-  
-  for(fila = 1; fila <= 6; fila++) {
-    if (tablero[fila][1] == 0)
-      offset = 1;
-    else 
-      offset = 0
-    
-    suma = tablero[fila][1 + offset];
-    for(columna = 2 + offset; columna <= 6; columna++) {
-      if (tablero[fila][columna] == tablero[fila][columna - 1])
-        suma += tablero[fila][columna];
-      else {
-        suma = 0;
-        break;
-      }
+function victoria (){
+    // horizontales
+    if( tablero[1][1] =! 0 && tablero[1][1] == tablero[1][2] && tablero[1][1] == tablero[1][3] && tablero[1][1] == tablero[1][4] && tablero[1][1] == tablero[1][5]){
+        if (tablero[1][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][1]==2){
+            jugador2.gano = true
+        }
     }
-    
-    if (suma == 5) {
-      ganador = 1
+    if( tablero[1][6] =! 0 && tablero[1][6] == tablero[1][2] && tablero[1][6] == tablero[1][3] && tablero[1][6] == tablero[1][4] && tablero[1][6] == tablero[1][5]){
+        if (tablero[1][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][6]==2){
+            jugador2.gano = true
+        }
     }
-    else if (suma == 10) {
-      ganador = 2
-    } else {
-    ganador = 0
+    if( tablero[2][1] =! 0 && tablero[2][1] == tablero[2][2] && tablero[2][1] == tablero[2][3] && tablero[2][1] == tablero[2][4] && tablero[2][1] == tablero[2][5]){
+        if (tablero[2][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[2][1]==2){
+            jugador2.gano = true
+        }
     }
-  }
-
-
-  for(columna = 1; columna <= 6; columna++) {
-    if (tablero[1][columna] == 0)
-      offset = 1;
-    else 
-      offset = 0
-    
-    suma = tablero[fila][offset + 1];
-    for(columna = 2 + offset; columna <= 6; columna++) {
-      if (tablero[fila][columna] == tablero[fila][columna - 1])
-        suma += tablero[fila][columna];
-      else {
-        suma = 0;
-        break;
-      }
+    if( tablero[2][6] =! 0 && tablero[2][6] == tablero[2][2] && tablero[2][6] == tablero[2][3] && tablero[2][6] == tablero[2][4] && tablero[2][6] == tablero[2][5]){
+        if (tablero[2][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[2][6]==2){
+            jugador2.gano = true
+        }
     }
-    
-    if (suma == 5) 
-      ganador = 1
-    else if (suma == 10) {
-      ganador = 2
-    } else {
-      ganador = 0
+    if( tablero[3][1] =! 0 && tablero[3][1] == tablero[3][2] && tablero[3][1] == tablero[3][3] && tablero[3][1] == tablero[3][4] && tablero[3][1] == tablero[3][5]){
+        if (tablero[3][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[3][1]==2){
+            jugador2.gano = true
+        }
     }
-
-  // diagonales derecha abajo
-    if(tablero[1][1]!=0 && tablero[1][1] == tablero[2][2] && tablero[1][1] == tablero[3][3] && tablero[1][1] == tablero[4][4] && tablero[1][1] == tablero[5][5]){
+    if( tablero[3][6] =! 0 && tablero[3][6] == tablero[3][2] && tablero[3][6] == tablero[3][3] && tablero[3][6] == tablero[3][4] && tablero[3][6] == tablero[3][5]){
+        if (tablero[3][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[3][6]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[4][1] =! 0 && tablero[4][1] == tablero[4][2] && tablero[4][1] == tablero[4][3] && tablero[4][1] == tablero[4][4] && tablero[4][1] == tablero[4][5]){
+        if (tablero[4][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[4][1]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[4][6] =! 0 && tablero[4][6] == tablero[4][2] && tablero[4][6] == tablero[4][3] && tablero[4][6] == tablero[4][4] && tablero[4][6] == tablero[4][5]){
+        if (tablero[4][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[4][6]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[5][1] =! 0 && tablero[5][1] == tablero[5][2] && tablero[5][1] == tablero[5][3] && tablero[5][1] == tablero[5][4] && tablero[5][1] == tablero[5][5]){
+        if (tablero[5][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[5][1]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[5][6] =! 0 && tablero[5][6] == tablero[5][2] && tablero[5][6] == tablero[5][3] && tablero[5][6] == tablero[5][4] && tablero[5][6] == tablero[5][5]){
+        if (tablero[5][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[5][6]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][1] =! 0 && tablero[6][1] == tablero[6][2] && tablero[6][1] == tablero[6][3] && tablero[6][1] == tablero[6][4] && tablero[6][1] == tablero[6][5]){
+        if (tablero[6][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[6][1]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][6] =! 0 && tablero[6][6] == tablero[6][2] && tablero[6][6] == tablero[6][3] && tablero[6][6] == tablero[6][4] && tablero[6][6] == tablero[6][5]){
+        if (tablero[5][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[5][6]==2){
+            jugador2.gano = true
+        }
+    }
+      // verticales
+    if( tablero[1][1] =! 0 && tablero[1][1] == tablero[2][1] && tablero[1][1] == tablero[3][1] && tablero[1][1] == tablero[4][1] && tablero[1][1] == tablero[5][1]){
+        if (tablero[1][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][1]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][1] =! 0 && tablero[6][1] == tablero[2][1] && tablero[6][1] == tablero[3][1] && tablero[6][1] == tablero[4][1] && tablero[6][1] == tablero[5][1]){
+        if (tablero[6][1] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][1]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[1][2] =! 0 && tablero[1][2] == tablero[2][2] && tablero[1][2] == tablero[3][2] && tablero[1][2] == tablero[4][2] && tablero[1][2] == tablero[5][2]){
+        if (tablero[1][2] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][2]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][2] =! 0 && tablero[6][2] == tablero[2][2] && tablero[6][2] == tablero[3][2] && tablero[6][2] == tablero[4][2] && tablero[6][2] == tablero[5][2]){
+        if (tablero[6][2] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[6][2]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[1][3] =! 0 && tablero[1][3] == tablero[2][3] && tablero[1][3] == tablero[3][3] && tablero[1][3] == tablero[4][3] && tablero[1][3] == tablero[5][3]){
+        if (tablero[1][3] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][3]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][3] =! 0 && tablero[6][3] == tablero[2][3] && tablero[6][3] == tablero[3][3] && tablero[6][3] == tablero[4][3] && tablero[6][3] == tablero[5][3]){
+        if (tablero[6][3] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[6][3]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[1][4] =! 0 && tablero[1][4] == tablero[2][4] && tablero[1][4] == tablero[3][4] && tablero[1][4] == tablero[4][4] && tablero[1][4] == tablero[5][4]){
+        if (tablero[1][4] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][4]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][4] =! 0 && tablero[6][4] == tablero[2][4] && tablero[6][4] == tablero[3][4] && tablero[6][4] == tablero[4][4] && tablero[6][4] == tablero[5][4]){
+        if (tablero[6][4] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[6][4]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[1][5] =! 0 && tablero[1][5] == tablero[2][5] && tablero[1][5] == tablero[3][5] && tablero[1][5] == tablero[4][5] && tablero[1][5] == tablero[5][5]){
+        if (tablero[1][5] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][5]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][5] =! 0 && tablero[6][5] == tablero[2][5] && tablero[6][5] == tablero[3][5] && tablero[6][5] == tablero[4][5] && tablero[6][5] == tablero[5][5]){
+        if (tablero[6][5] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[6][5]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[1][6] =! 0 && tablero[1][6] == tablero[2][6] && tablero[1][6] == tablero[3][6] && tablero[1][6] == tablero[4][6] && tablero[1][6] == tablero[5][6]){
+        if (tablero[1][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[1][6]==2){
+            jugador2.gano = true
+        }
+    }
+    if( tablero[6][6] =! 0 && tablero[6][6] == tablero[2][6] && tablero[6][6] == tablero[3][6] && tablero[6][6] == tablero[4][6] && tablero[6][6] == tablero[5][6]){
+        if (tablero[6][6] == 1){
+            jugador1.gano = true
+        }
+        else if (tablero[6][6]==2){
+            jugador2.gano = true
+        }
+    }
+      // diagonales derecha abajo
+      if(tablero[1][1]!=0 && tablero[1][1] == tablero[2][2] && tablero[1][1] == tablero[3][3] && tablero[1][1] == tablero[4][4] && tablero[1][1] == tablero[5][5]){
         if (tablero[1][1] == 1) {
           "jugador1".gana = true
         }
@@ -359,19 +577,31 @@ function victoria() {
     } 
 
   
-  }
     if ("jugador1".gana == true && "jugador2".gana == true){
-      // empate   (\0 o 0/)
-      //          ( \   / )
+      empate()
     }
     else if ("jugador1".gana == true){
-      // felicidades ganaste \(pup)/
+      victoria1()
     }
     else if("jugador2".gana == true){
-      // felicidades ganaste \(pup)/ 
+      victoria2()
     }
 }
 
-  window.onload = function() {
+function victoria1{
+  const element = document.getElementById("victoria1");
+  element.style.display = 'block';
+}
+
+function victoria2{
+  const element = document.getElementById("victoria2");
+  element.style.display = 'block';}
+
+function empate{
+  const element = document.getElementById("victoria2");
+  element.style.display = 'block';}
+}
+
+window.onload = function() {
    IniciarPartida();
   }

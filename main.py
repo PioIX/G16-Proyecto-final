@@ -85,8 +85,12 @@ def salaB():
       cant = conn.execute(g)
       a += 1
       salas.append(cant)
+    conn.commit()
+    conn.close()
     return render_template('selectorSalas.html', nombres = salas)
   else:
+    conn.commit()
+    conn.close()
     return render_template('selectorSalas.html')
 
 @app.route('/crearSala', methods=['GET'])

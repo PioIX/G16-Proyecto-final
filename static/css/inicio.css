@@ -131,3 +131,21 @@ input{
     border-radius: 10px;
     border-width: 1px;
 }
+
+.cartelReglas{
+  display:block;
+  z-index:4;
+  color:#FFFF;
+  border-radius:10px;
+  font-size: 21px;
+  background-color: red;
+  border-color: #0000;
+  border: 2px;
+  height: 20%;
+  width:80%;
+  position: absolute;
+  top: 7%;
+  margin-left:10%;
+  margin-top: 50%;
+  margin-bottom: 7%;
+}
