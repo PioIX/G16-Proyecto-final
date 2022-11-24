@@ -134,6 +134,7 @@ input{
 
 .cartelReglas{
   display:block;
+  text-align:center;
   z-index:4;
   color:#FFFF;
   border-radius:10px;
@@ -141,11 +142,13 @@ input{
   background-color: red;
   border-color: #0000;
   border: 2px;
-  height: 20%;
+  height:80%;
   width:80%;
   position: absolute;
   top: 7%;
-  margin-left:10%;
-  margin-top: 50%;
-  margin-bottom: 7%;
+  left: 10%;
+}
+
+.textoReglas{
+  top:40%
 }

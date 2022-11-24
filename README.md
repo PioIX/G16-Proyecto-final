@@ -13,4 +13,4 @@ _ Flask (python)<br>
 _ DB (esta va a tener el nombre, contraseña, puntaje y posiblemente ranking si se puede, de cada jugador)<br>
 _ JS (principalmente intermediario del DB y el flask)<br>
 
-
+https://replit.com/@Santiago-Mart10/Proyecto-final?from=notifications
