@@ -1,9 +1,10 @@
 function mostrarReglas() {
-  const element = document.getElementById("cartelReglas");
+  let element = document.getElementById("cartelReglas");
   element.style.display ='block';
 }
 
 function ocultarReglas() {
-  const element = document.getElementsByClassName("cartelReglas");
-    element.style.display ='none';
+  let element = document.getElementsByClassName("cartelReglas");
+  console.log(element) 
+  element.style.display ='none';
 }

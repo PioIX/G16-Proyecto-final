@@ -57,12 +57,12 @@ var  tablero = [
 
 
 function colocarFicha(fila, columna) {
-      if (jugadorActual == "jugador1" && fichaColocada != true ){
+      if (jugadorActual == "jugador1" && fichaColocada != true && tablero[fila][columna] == 0 ){
         tablero[fila][columna] = 1
         fichaColocada = true
         repintar(fila,columna)
       }
-      else if (jugadorActual == "jugador2" && fichaColocada != true ) {
+      else if (jugadorActual == "jugador2" && fichaColocada != true && tablero[fila][columna] == 0 ) {
         tablero[fila][columna] = 2
         fichaColocada = true
         repintar(fila,columna)
