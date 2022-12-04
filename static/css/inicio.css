@@ -1,5 +1,5 @@
 html{
-    font-family:monospace;
+    font-family:monospace
 }
 
 
@@ -132,8 +132,18 @@ input{
     border-width: 1px;
 }
 
+.ocultarReglas {
+    position: relative;
+    top: 69%;
+    left: 46%;
+    border-radius: 56px;
+    height: 6%;
+    width: 6%;
+    font-size: 30px;
+}
+
 .cartelReglas{
-  display:block;
+  display:none;
   text-align:center;
   z-index:4;
   color:#FFFF;

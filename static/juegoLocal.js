@@ -3,11 +3,8 @@ function IniciarPartida(){
     Turnos = 1
     jugadorActual = "jugador1"
     fichaColocada = false
-    /*
-      Jugadores:
-      1 - Azul
-      2 - Rojo
-    */
+    jugador1Gano = false
+    jugador2Gano = false
   }
 
 var jugadorActual = "jugador1"
@@ -283,7 +280,7 @@ function girarDerecha(cuadrante){
           tablero[4][2] = cuadranteCopia[5][1]
           tablero[5][1] = cuadranteCopia[6][2]
           tablero[6][2] = cuadranteCopia[5][3]
-          tablero[5][1] = cuadranteCopia[4][2]
+          tablero[5][3] = cuadranteCopia[4][2]
 
           repintar(4,2)
           repintar(5,3)
@@ -321,132 +318,20 @@ function girarDerecha(cuadrante){
     victoria()
     } 
   }
-function victoria() {
-  
-  for(fila = 1; fila <= 6; fila++) {
-    if (tablero[fila][1] == 0)
-      offset = 1;
-    else 
-      offset = 0;
-    
-    suma = tablero[fila][1 + offset];
-    for(columna = 2 + offset; columna <= 6; columna++) {
-      if (tablero[fila][columna] == tablero[fila][columna - 1])
-        suma += tablero[fila][columna];
-      else {
-        suma = 0;
-        break;
-      }
-    }
-    
-    if (suma == 5) {
-      ganador = 1
-    }
-    else if (suma == 10) {
-      ganador = 2
-    } /*else {
-    ganador = 0  
-    }*/
-  }
 
 
-  for(columna = 1; columna <= 6; columna++) {
-    if (tablero[1][columna] == 0)
-      offset = 1;
-    else 
-      offset = 0
-    
-    suma = tablero[fila][offset + 1];
-    for(columna = 2 + offset; columna <= 6; columna++) {
-      if (tablero[fila][columna] == tablero[fila][columna - 1])
-        suma += tablero[fila][columna];
-      else {
-        suma = 0;
-        break;
-      }
-    }
-    
-    if (suma == 5) 
-      ganador = 1
-    else if (suma == 10) {
-      ganador = 2
-    } else {
-      ganador = 0
-    }
-
-  // diagonales derecha abajo
-    if(tablero[1][1]!=0 && tablero[1][1] == tablero[2][2] && tablero[1][1] == tablero[3][3] && tablero[1][1] == tablero[4][4] && tablero[1][1] == tablero[5][5]){
-        if (tablero[1][1] == 1) {
-          "jugador1".gana = true
-        }
-        else if (tablero[1][1] == 2)
-          "jugador2".gana = true
-    }
-
-    if(tablero[2][2]!=0 && tablero[2][2] == tablero[3][3] && tablero[2][2] == tablero[4][4] && tablero[2][2] == tablero[5][5] && tablero[2][2] == tablero[6][6]){
-        if (tablero[2][2] == 1) {
-          "jugador1".gana = true
-        }
-        else if (tablero[2][2] == 2)
-          "jugador2".gana = true
-    }
-
-    if(tablero[1][2]!=0 && tablero[1][2] == tablero[2][3] && tablero[1][2] == tablero[3][4] && tablero[1][2] == tablero[4][5] && tablero[1][2] == tablero[5][6]){
-        if (tablero[1][2] == 1) {
-          "jugador1".gana = true
-        }
-        else if (tablero[1][2] == 2)
-          "jugador2".gana = true
-    }
-
-    if(tablero[2][1]!=0 && tablero[2][1] == tablero[3][2] && tablero[2][1] == tablero[4][3] && tablero[2][1] == tablero[5][4] && tablero[2][1] == tablero[6][5]){
-        if (tablero[2][1] == 1) {
-          "jugador1".gana = true
-        }
-        else if (tablero[2][1] == 2)
-          "jugador2".gana = true
-    }
-
-// diagonales izquierda abajo
-
-    if(tablero[1][6]!=0 && tablero[2][5] == tablero[1][6] && tablero[3][4] == tablero[1][6] && tablero[4][3] == tablero[1][6] && tablero[5][2] == tablero[1][6] ){
-        this.jugador.gana = true
-    }
-
-    if(tablero[2][5]!=0 && tablero[3][4] == tablero[2][5] && tablero[4][3] == tablero[2][5] && tablero[5][2] == tablero[2][5] && tablero[6][1] == tablero[2][5] ){
-        this.jugador.gana = true
-    }
-
-    if(tablero[1][5]!=0 && tablero[2][4] == tablero[1][5] && tablero[3][3] == tablero[1][5] && tablero[4][2] == tablero[1][5] && tablero[5][1] == tablero[1][5] ){
-        if (tablero[1][5] == 1) {
-          "jugador1".gana = true
-        }
-        else if (tablero[1][5] == 2)
-          "jugador2".gana = true
-    }
-
-    if(tablero[2][6]!=0 && tablero[3][5] == tablero[2][6] && tablero[4][4] == tablero[2][6] && tablero[5][3] == tablero[2][6] && tablero[6][2] == tablero[2][6] ){
-        if (tablero[2][6] == 1) {
-          "jugador1".gana = true
-        }
-        else if (tablero[2][6] == 2)
-          "jugador2".gana = true
-    } 
-
-  
-  }
-    if ("jugador1".gana == true && "jugador2".gana == true){
-      // empate   (\0 o 0/)
-      //          ( \   / )
-    }
-    else if ("jugador1".gana == true){
-      // felicidades ganaste \(pup)/
-    }
-    else if("jugador2".gana == true){
-      // felicidades ganaste \(pup)/ 
-    }
+function victoria1(){
+  document.getElementById("victoria1").style.display = 'block'; 
 }
 
-  window.onload = function() {
+function victoria2(){
+  document.getElementById("victoria2").style.display = 'block'; 
+}
+
+function empate(){
+  document.getElementById("empate").style.display = 'block'; 
+}
+
+window.onload = function() {
    IniciarPartida();
   }
