@@ -58,11 +58,13 @@ function colocarFicha(fila, columna) {
         tablero[fila][columna] = 1
         fichaColocada = true
         repintar(fila,columna)
+        victoria()
       }
       else if (jugadorActual == "jugador2" && fichaColocada != true && tablero[fila][columna] == 0 ) {
         tablero[fila][columna] = 2
         fichaColocada = true
         repintar(fila,columna)
+        victoria()
       }
       
   }
@@ -139,6 +141,8 @@ function girarIzquierda(cuadrante){
         repintar(3,3)
         repintar(1,3)
 
+        victoria()
+
         break;
         
       case "B":
@@ -161,6 +165,8 @@ function girarIzquierda(cuadrante){
         repintar(3,6)
         repintar(3,4)
 
+        victoria()
+
         break;
 
       case "C":
@@ -182,6 +188,8 @@ function girarIzquierda(cuadrante){
         repintar(5,3)
         repintar(6,2)
         repintar(5,1)
+
+        victoria()
         
         break;
 
@@ -205,9 +213,10 @@ function girarIzquierda(cuadrante){
         repintar(6,6)
         repintar(6,4)
 
+        victoria()
+
         break;        
       }
-      victoria()
     }
   }
 
@@ -246,6 +255,8 @@ function girarDerecha(cuadrante){
           repintar(1,1)          
           repintar(3,1)
           repintar(3,3)
+
+          victoria()
          
         break;
         
@@ -269,6 +280,8 @@ function girarDerecha(cuadrante){
           repintar(3,4)
           repintar(1,4)
 
+          victoria()
+
         break;
 
         case "C":
@@ -290,6 +303,8 @@ function girarDerecha(cuadrante){
           repintar(4,3)
           repintar(6,3)
           repintar(6,1)
+
+          victoria()
 
         break;
 
@@ -313,11 +328,142 @@ function girarDerecha(cuadrante){
           repintar(6,4)
           repintar(4,4)
 
+          victoria()
+          
         break;        
       }
-    victoria()
     } 
   }
+
+function victoria(){
+    for(i=1 ; i<=6 ; i++){
+
+        // horizontales
+        
+        if (tablero[i][1] == tablero[i][2] && tablero[i][1] == tablero[i][3] && tablero[i][1] == tablero[i][4] && tablero[i][1] == tablero[i][5]){
+            if (tablero[i][1] == 1){
+                jugador1Gano = true
+            }
+            else if (tablero[i][1] == 2){
+                jugador2Gano = true
+            }
+        }
+
+        if (tablero[i][2] == tablero[i][3] && tablero[i][2] == tablero[i][4] && tablero[i][2] == tablero[i][5] && tablero[i][2] == tablero[i][6]){
+            if (tablero[i][2] == 1){
+                jugador1Gano = true
+            }
+            else if (tablero[i][2] == 2){
+                jugador2Gano = true
+            }
+        }
+
+        // verticales
+
+        if (tablero[1][i] == tablero[2][i] && tablero[1][i] == tablero[3][i] && tablero[1][i] == tablero[4][i] && tablero[1][i] == tablero[5][i]){
+            if (tablero[1][i] == 1){
+                jugador1Gano = true
+            }
+            else if (tablero[1][i] == 2){
+                jugador2Gano = true
+            }
+        }
+
+        if (tablero[2][i] == tablero[3][i] && tablero[2][i] == tablero[4][i] && tablero[2][i] == tablero[5][i] && tablero[2][i] == tablero[6][i]){
+            if (tablero[2][i] == 1){
+                jugador1Gano = true
+            }
+            else if (tablero[2][i] == 2){
+                jugador2Gano = true
+            }
+        }
+
+    }
+
+    // diagonales (solo son 8 casos)
+
+    if (tablero[1][1] == tablero[2][2] && tablero[1][1] == tablero[3][3] && tablero[1][1] == tablero[4][4] && tablero[1][1] == tablero[5][5]){
+        if (tablero[1][1] == 1){
+            jugador1Gano = true
+        }
+        else if (tablero[1][1] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if (tablero[2][2] == tablero[3][3] && tablero[2][2] == tablero[4][4] && tablero[2][2] == tablero[5][5] && tablero[2][2] == tablero[6][6]){
+        if (tablero[2][2] == 1){
+            jugador1Gano = true
+        }
+        else if (tablero[2][2] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if (tablero[2][1] == tablero[3][2] && tablero[2][1] == tablero[4][3] && tablero[2][1] == tablero[5][4] && tablero[2][1] == tablero[6][5]){
+        if (tablero[2][1] == 1){
+            jugador1Gano = true
+        }
+        else if (tablero[2][1] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if (tablero[1][2] == tablero[2][3] && tablero[1][2] == tablero[3][4] && tablero[1][2] == tablero[4][5] && tablero[1][2] == tablero[5][6]){
+        if(tablero[1][2] == 1){
+            jugador1Gano = true
+        }
+        else if(tablero[1][2] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if(tablero[1][6] == tablero[2][5] && tablero[1][6] == tablero[3][4] && tablero[1][6] == tablero[4][3] && tablero[1][6] == tablero[5][2]){
+        if(tablero[1][6] == 1){
+            jugador1Gano = true
+        }
+        else if(tablero[1][6] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if(tablero[2][5] == tablero[3][4] && tablero[2][5] == tablero[4][3] && tablero[2][5] == tablero[5][2] && tablero[2][5] == tablero[6][1]){
+        if(tablero[2][5] == 1){
+            jugador1Gano = true
+        }
+        else if(tablero[2][5] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if(tablero[1][5] == tablero[2][4] && tablero[1][5] == tablero[3][3] && tablero[1][5] == tablero[4][2] && tablero[1][5] == tablero[5][1]){
+        if(tablero[1][5] == 1){
+            jugador1Gano = true
+        }
+        else if(tablero[1][5] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if(tablero[2][6] == tablero[3][5] && tablero[2][6] == tablero[4][4] && tablero[2][6] == tablero[5][3] && tablero[2][6] == tablero[6][2]){
+        if(tablero[2][6] == 1){
+            jugador1Gano = true
+        }
+        else if(tablero[2][6] == 2){
+            jugador2Gano = true
+        }
+    }
+
+    if(jugador1Gano == true && jugador2Gano == true){
+        empate()
+    }
+    else if(jugador1Gano == true){
+        victoria1()
+    }
+    else if(jugador2Gano == true){
+        victoria2()
+    }
+}
 
 
 function victoria1(){
