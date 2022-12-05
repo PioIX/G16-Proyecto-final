@@ -68,7 +68,6 @@ def menuAdmin():
 
 @app.route('/juego', methods=['GET'])
 def jueguito():
-  
   return render_template('juegoLocal.html')
 
 @app.route('/seleccionarSala', methods=['GET'])
@@ -76,6 +75,7 @@ def salaB():
   conn = sqlite3.connect('Usuarios.db')
   q = f"""SELECT COUNT(*) FROM Salas WHERE Nombre != '';"""
   resu = conn.execute(q)
+  resu = int(resu)
 
   if resu > 0:
     salas = {}
