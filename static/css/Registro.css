@@ -54,9 +54,12 @@ label{
 }
 
 .insert {
-    margin-left:29% ;
     border-radius: 5px;
-    border: 0px;    
+    border: 0px;
+    height: 25px;
+    font-size: 76%;
+    margin-top: 5%;
+    margin-left: 20%;
 }
 
 h3 {

@@ -1,6 +1,9 @@
 html{
-    background-color: #94d6e5;
-    font-family: monospace;
+  font-family: monospace;
+}
+
+body{
+  background-image: url('../admin.jpeg');
 }
 
 .titulo{
@@ -13,7 +16,7 @@ html{
     flex-direction: column;
     width: 25%;
     height: 7%;
-    background-color: #d7e3fc;
+    background-color: #dbb42c;
     border-radius: 25px;
     margin: auto;
     margin-top: 5%;
@@ -36,4 +39,9 @@ html{
 
 .opcion:hover{
   background-color: #8b8c89;
+}
+
+h3{
+  color:#FFFF;
+  font-size: 25px;
 }

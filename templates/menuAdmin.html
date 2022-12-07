@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/menuAdmin.css')}}">
+    <head>
+      <title>Bienvenido</title>
+      <h3>Bienvenido todopoderoso Admin</h3>
+    </head>
+    <body>
+        <div class="menuOpciones">
+            <form action="{{url_for('jueguito')}}" method ="GET">
+            <input class="opcion" value="Modo local" type="submit">
+            </form>
+          
+            <form action="{{url_for('salaC')}}" method="GET">
+            <input class="opcion" value="Crear sala" type="submit">
+            </form>
+          
+            <form action="{{url_for('salaB')}}" method="GET">
+            <input class="opcion" value="Buscar sala" type="submit">
+            </form>
+          
+            <form action="{{url_for('rankings')}}" method="GET">
+            <input class="opcion rankings" value="Ver Rankings" type="submit">
+            </form>
+          
+            <form>
+            <input class="opcion reiniciarE" value="Reiniciar estadisticas" type="submit">  
+            </form>
+          
+            <form action="{{url_for('destruccion')}}" method="GET">
+            <input class="opcion borrarU" value="Borrar usuarios" type="submit">  
+            </form>
+        </div>
+    </body>
+</html>
