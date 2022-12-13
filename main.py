@@ -90,7 +90,7 @@ def editPerfilConfirm():
   if (request.method == "POST"):
       conn = sqlite3.connect('Usuarios.db')
       q = f"""SELECT Nombre AND Contraseña FROM Usuarios WHERE Nombre = '{session['usuario']}' AND Contraseña = '{session['password']}';"""
-      s = f"""SELECT Nombre FROM Usuario WHERE Nombre ='{request.form['nombre']}'"""
+      s = f"""SELECT Nombre FROM Usuarios WHERE Nombre ='{request.form['nombre']}'"""
       resu = conn.execute(q)
       asu = conn.execute(s)
 
@@ -164,6 +164,8 @@ def rankings():
       ids.append(idPasado[0])
       puntajes.append(puntajePasado[0])
       ip += 1
+    conn.commit()
+    conn.close()
     return render_template("rankings.html", nombres1 = nombres, ids1 = ids, puntajes1 = puntajes)
   
 
@@ -185,5 +187,10 @@ def borrarPuntos():
   conn.close()
   return redirect('/inicioAdmin')
 
+@app.route('/cerrarSesion', methods=['GET'])
+def cerrado():
+  session['usuario'] = " "
+  session['password'] = " "
+  return redirect('/')
   
 app.run(host='0.0.0.0', port=81)
