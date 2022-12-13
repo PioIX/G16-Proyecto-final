@@ -70,7 +70,11 @@ body {
         border-radius: 20px;
         text-align: center;
       }
-
+table {
+  border: 1px
+  border-color: #FFFF
+}
+      
       mark {
         position: absolute;
         z-index: 2;

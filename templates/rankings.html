@@ -7,24 +7,25 @@
 <table>
 <tr>
 <th>ID</th>
-<th>Nombre de jugador</th>
+<th>Jugador</th>
 <th>Puntaje</th>
 </tr>
-
-{% for nombre in nombres1 %}
-<tr>
-  <td></td>
-  <td>{{nombre}}</td>
-  <td></td>
-<tr>
-{% endfor %}  
 {% for id in ids1 %}
-<tr>
+  <tr>
   <td>{{id}}</td>
-  <td></td>
-  <td></td>
-<tr>
+  <td>{{nombres1[id-1]}}</td>
+  <td>{{puntajes1[id-1]}}</td>
+  </tr>
 {% endfor %}  
+<!--   
+{% for nombre in nombres1 %}
+  <td>{{nombre}}</td>
+{% endfor %}  
+
+{% for puntaje in puntajes1 %}
+  <td>{{puntaje}}</td>
+{% endfor %}   -->
+
 
 
 </table>  
