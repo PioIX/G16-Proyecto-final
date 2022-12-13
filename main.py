@@ -24,7 +24,7 @@ def ingreso():
       if resu.fetchone():
         conn.commit()
         conn.close() 
-        if session['usuario'] == "admin" and session['password'] == "admin":
+        if session['usuario'] == "admin" and session['password'] == "admincito":
           return redirect("/inicioAdmin")
         else:
           return redirect("/inicio")
@@ -43,7 +43,7 @@ def registro():
       nombre = request.form['nombre']
       contraseña = request.form['contra']
       q = f"""SELECT * FROM Usuarios WHERE Nombre = '{nombre}';"""
-      s = f"""INSERT INTO Usuarios(nombre, contraseña) VALUES ('{nombre}', '{contraseña}');"""
+      s = f"""INSERT INTO Usuarios(nombre, contraseña, puntaje) VALUES ('{nombre}', '{contraseña}', 0);"""
       resu = conn.execute(q)
 
       if resu.fetchone():
@@ -137,9 +137,35 @@ def editPerfilConfirm():
             conn.close()
             return redirect('/')
 
-@app.route('/rankings')
+@app.route('/rankings', methods=['GET'])
 def rankings():
-  return render_template('rankings.html')
+  if request.method == 'GET':
+    conn = sqlite3.connect('Usuarios.db')
+    q = """SELECT COUNT(*) FROM Usuarios """
+    resu = conn.execute(q)
+    cantidad = resu.fetchone()
+    ip = 1
+    nombres = []
+    ids = []
+    puntajes = []
+    print(cantidad[0])
+    
+    for i in range(cantidad[0]) :
+      a = f"""SELECT Nombre FROM Usuarios WHERE ID = '{ip}'"""
+      b = f"""SELECT ID FROM Usuarios WHERE ID = '{ip}'"""
+      c = f"""SELECT Puntaje FROM Usuarios WHERE ID = '{ip}'"""
+      id = conn.execute(b)
+      nombre = conn.execute(a)
+      puntaje = conn.execute(c)
+      idPasado = id.fetchone()
+      nombrePasado = nombre.fetchone()
+      puntajePasado = puntaje.fetchone()
+      nombres.append(nombrePasado[0])
+      ids.append(idPasado[0])
+      puntajes.append(puntajePasado[0])
+      ip += 1
+    return render_template("rankings.html", nombres1 = nombres, ids1 = ids, puntajes1 = puntajes)
+  
 
 @app.route('/elFin', methods=['GET'])
 def destruccion():

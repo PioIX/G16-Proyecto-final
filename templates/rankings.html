@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html>
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/rankings.css')}}">
-  <head>    
-  </head>
-  <body>
-    
-  <table class="tabla">
-    <tr>
-      <th>Nombre</th>
-      <th>Puntaje</th>
-    </tr>
-    <tr>
-      <td>pepe</td>
-      <td>100</td>
-    </tr>
-  </table>
-  </body>
+
+<body>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Nombre de jugador</th>
+<th>Puntaje</th>
+</tr>
+
+{% for nombre in nombres1 %}
+<tr>
+  <td></td>
+  <td>{{nombre}}</td>
+  <td></td>
+<tr>
+{% endfor %}  
+{% for id in ids1 %}
+<tr>
+  <td>{{id}}</td>
+  <td></td>
+  <td></td>
+<tr>
+{% endfor %}  
+
+
+</table>  
+
+</body>
 </html>
