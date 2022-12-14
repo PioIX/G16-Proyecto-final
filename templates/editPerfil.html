@@ -7,13 +7,8 @@
     <form action="{{url_for('editPerfilConfirm')}}" method="POST">
       <h1 class="cartel"> Nombre</h1><br>
       <input  class ="insert" type="text" name="nombre"> <br>
-      
-      
       <h1 class="cartel">Contraseña</h1><br>
       <input class ="insert" type="password" name="contra"> <br>
-
-      <h1 class="cartel">Confirma tu contraseña</h1><br>
-      <input class ="insert" type="password" name="contra2"> <br>
       {%if error1 == True%}
         <h3>No puedes ponerte el mismo nombre de usuario</h3>
       {%endif%}
@@ -21,9 +16,6 @@
         <h3>Estas cambiando a la misma contraseña</h3>
       {%endif%}
       {%if error3 == True%}
-        <h3>Las contraseñas no coinciden</h3>
-      {%endif%}
-      {%if error4 == True%}
         <h3>El nombre de usuario al que quieres cambiar ya esta tomado</h3>
       {%endif%}
       

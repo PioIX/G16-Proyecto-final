@@ -27,12 +27,16 @@
             <input class="opcion rankings" value="Ver Rankings" type="submit">
             </form>
           
-            <form>
+            <form action="{{url_for('borrarPuntos')}}" method="GET">
             <input class="opcion reiniciarE" value="Reiniciar estadisticas" type="submit">  
             </form>
           
             <form action="{{url_for('destruccion')}}" method="GET">
             <input class="opcion borrarU" value="Borrar usuarios" type="submit">  
+            </form>
+
+          <form action="{{url_for('cerrado')}}" method="GET">
+            <input class="opcion" value="cerrar sesión" type="submit">
             </form>
         </div>
     </body>
